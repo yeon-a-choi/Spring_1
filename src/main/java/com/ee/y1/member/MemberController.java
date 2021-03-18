@@ -45,11 +45,6 @@ public class MemberController {
 		System.out.println("result : "+result);
 		System.out.println("------------------");
 		
-		System.out.println("ID : "+memberDTO.getId());
-		System.out.println("PW : "+memberDTO.getPw());
-		System.out.println("Name : "+memberDTO.getName());
-		System.out.println("Phone : "+memberDTO.getPhone());
-		System.out.println("Email : "+memberDTO.getEmail());
 		
 	}
 	
