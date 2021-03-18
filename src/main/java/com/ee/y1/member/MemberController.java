@@ -31,18 +31,13 @@ public class MemberController {
 	
 	//POST
 	@RequestMapping(value="/member/memberJoin", method=RequestMethod.POST)
-	public void memberJoin2(String id, String pw, String name, String phone, String email) throws Exception {
+	public void memberJoin2(MemberDTO memberDTO) throws Exception {
 						// 파라미터로 받아오는 id, pw, name, phone, email을 위의 타입처럼 변수로 받아올 수 있음!
+						// 하나하나 set으로 옮겨오지 않고 memberDTO 하나로 값 모두 set
+	
 						// 원래는 매개변수로 HttpServletRequest request를 받아옴
 						// 원래는 String id = request.getParameter("id");로 받아와야 함
 		
-		MemberDTO memberDTO = new MemberDTO();
-		
-		memberDTO.setId(id);
-		memberDTO.setPw(pw);
-		memberDTO.setName(name);
-		memberDTO.setPhone(phone);
-		memberDTO.setEmail(email);
 		
 		int result = memberService.memberJoin(memberDTO);
 		
