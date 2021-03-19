@@ -8,6 +8,7 @@ import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class MemberController {
@@ -77,7 +78,7 @@ public class MemberController {
 	
 	
 	@RequestMapping(value="/member/memberLogin", method=RequestMethod.POST)
-	public String memberLogin2(MemberDTO memberDTO, Model model) throws Exception {
+	public ModelAndView memberLogin2(MemberDTO memberDTO, ModelAndView modelandview) throws Exception {
 		//HttpServletRequest request
 		
 //		String id = request.getParameter("id");
@@ -90,9 +91,11 @@ public class MemberController {
 		memberDTO = memberService.memberLogin(memberDTO);
 		
 //		request.setAttribute("dto", memberDTO);
-		model.addAttribute("dto", memberDTO);
+//		model.addAttribute("dto", memberDTO);
+		modelandview.addObject("dto", memberDTO);
+		modelandview.setViewName("member/memberPage");
 		
-		return "member/memberPage";
+		return modelandview;
 		
 	}
 
