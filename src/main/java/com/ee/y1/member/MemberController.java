@@ -23,11 +23,11 @@ public class MemberController {
 	
 	//GET
 	@RequestMapping(value="/member/memberJoin")
-	public String memberJoin(){
+	public void memberJoin(){
 		
 		System.out.println("-- Join --");
 		
-		return "/member/memberJoin";
+		//return "/member/memberJoin";
 		
 	}
 	
